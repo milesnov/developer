@@ -1,46 +1,31 @@
-# Use Oracle Database Sagas with PL/SQL Microservices
+# Use Oracle Database JSON features such as JSON Duality and Mongo API with OpenAI
 
 ## Introduction
 
-This lab will show you how to use Oracle Database Sagas with PL/SQL Microservices
+This lab will show you how to use Oracle Database JSON features to story, analyze, etc. your Open AI other data.
 
 Estimated Time:  10 minutes
 
 ### Objectives
 
--   Test sagas with PL/SQL participants
+-   Use 
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+- Oracle Database
 
-### Objectives
+## Task 1: Obtain an Oracle Free 23c Database
 
--   Understand the concepts of Oracle Database Sagas with PL/SQL Microservices
+1.    There are a number of ways to go about this 
 
-### Prerequisites
+```
+    <copy>docker pull container-registry.oracle.com/database/free</copy>
+   ```
 
-- This lab presumes you have already completed the earlier labs.
-
-## Task 1: Obtain an Oracle Database
-
-1.    Enter the Cloud Shell and enter the following command to enter SQLcl
-    ```
-    <copy>sql /nolog</copy>
-    ```
+```
+    <copy>docker pull container-registry.oracle.com/database/free</copy>
+```
     
-2.    Set config using the following command
-    ```
-    <copy>set cloudconfig wallet/wallet.zip</copy>
-    ```
-
-3.    Enter the following command and then enter your password when prompted to connect to `sagadb1`
-
-    ```
-    <copy>connect admin@sagadb1_tp</copy>
-    ```  
-    
-   The output should look similar to the following.
 
    ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
 
