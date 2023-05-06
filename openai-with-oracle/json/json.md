@@ -8,15 +8,15 @@ Estimated Time:  10 minutes
 
 ### Objectives
 
--   Use 
+-   Use Oracle Database JSON features to story, analyze, etc. your Open AI other data.
 
 ### Prerequisites
 
-- Oracle Database
+- Completion of Setup lab
 
-## Task 1: Obtain an Oracle Free 23c Database
+## Task 1: Execute an Open AI query and save the results in the database
 
-1.    There are a number of ways to go about this 
+1.    Build the src code project that was downloaded in the  
 
 ```
     <copy>docker pull container-registry.oracle.com/database/free</copy>
@@ -30,7 +30,7 @@ Estimated Time:  10 minutes
    ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
 
 
-## Task 2: Login to `sagadb2` database using SQLcl and add Flight, Hotel, and Car participants
+## Task 2: Query the results in the database using both SQL and JSON queries.
 
 1.    Open a new browser tab with another OCI console and enter the Cloud Shell there. 
 
@@ -55,4 +55,4 @@ You may now **proceed to the next lab.**..
 ## Acknowledgements
 
 * **Author** - Paul Parkinson, Architect and Developer Evangelist
-* **Last Updated By/Date** - Paul Parkinson, December 2023
+* **Last Updated By/Date** - Paul Parkinson, 2023

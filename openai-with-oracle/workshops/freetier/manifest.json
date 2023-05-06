@@ -28,14 +28,14 @@
       },
       {
         "title": "Lab 5: OpenAI conversation/chat and OCI Vision Service and OCI Speech Service: detect objects in an image and write a sentence using those objects, including sentiment generation and analysis as an educational tool",
-        "filename": "../../ocis-openaidalle/ocivision-openaidalle.md"
+        "filename": "../../ocivision-ocispeech-openaichat/ocivision-ocispeech-openaichat.md"
       },
       {
         "title": "Lab 6: Mixed Reality and Vision AI: the names of objects in a person's surroundings are spoken out to them from the spatial location where they are located for individuals that are hearing impaired or have Alzheimer’s",
         "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
       },
       {
-        "title": "Lab 7: Techniques for calllling OpenAI and Oracle Services",
+        "title": "Lab 7: Techniques for calling OpenAI and Oracle Services",
         "filename": "../../waystocall-openai/waystocall-openai.md"
       },
       {
