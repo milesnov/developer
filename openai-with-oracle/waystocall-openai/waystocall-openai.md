@@ -27,6 +27,12 @@ Estimated Time:  10 minutes
     - serverless function *
     - MLE Javascript stored procedure IN the actual database
 
+https://www.thatjeffsmith.com/archive/2023/04/oracle-23c-free-developer-release-mle-js-modules-snippets/
+https://docs.oracle.com/en/database/oracle/oracle-database/23/mlejs/mle-js-modules-and-environments.html
+https://oracle-samples.github.io/mle-modules/docs/mle-js-fetch/23c/
+https://blogs.oracle.com/developers/post/using-javascript-community-modules-in-oracle-database-23c-free-developer-release
+
+
 You may now **proceed to the next lab.**..
 
 ## Acknowledgements

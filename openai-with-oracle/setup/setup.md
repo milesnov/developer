@@ -8,10 +8,12 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-* Provision an Oracle Database 
-* Install SQlCl client for convenient administration
 * Clone workshop code
-* Execute setup
+* Provision an Oracle Database 
+* Install SQLcl client for convenient administration of database
+* Run scripts in SQLcl to setup database user, tables, and JSON duality views
+* Configure access to Oracle Cloud services including keys and config file
+* Build the workshop code so that it is ready for later labs
 
 ### Prerequisites
 
@@ -74,6 +76,39 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 
 ```
     <copy>@[AI_WORKSHOP_SRC_ROOT]/sql/create_user_enable_rest.sql</copy>
+```
+
+## Task 4: Configure access to Oracle Cloud services including keys and config file
+
+
+   
+1. First create a location to store the keys and config file which is generally `~/.oci`
+
+```
+    <copy>mkdir ~/.oci</copy>
+```
+
+2. Next, create a key_file and use it to obtain a finger print as describe here: Full instructions can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
+
+
+3. Finally, Full instructions for creating the `config` file (generally placed in `~/.oci`) can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File
+  However, in short, you can create the `config` file manually and simply fill in the appropriate information.
+
+```
+    [DEFAULT]
+      user=ocid1.user.oc1..<unique_ID>
+      fingerprint=<your_fingerprint>
+      key_file=~/.oci/oci_api_key.pem
+      tenancy=ocid1.tenancy.oc1..<unique_ID>
+      region=us-ashburn-1
+```
+
+## Task 5: Build the workshop code so that it is ready for later labs
+
+1.    Simply issue the following command, replacing the value of `[AI_WORKSHOP_SRC_ROOT]`, to build and run the Spring Boot Java application that is used for most of the labs in this workshop.
+
+```
+    <copy>cd [AI_WORKSHOP_SRC_ROOT] ;  mvn clean package ; java -jar target/oracleai-0.0.1-SNAPSHOT.jar</copy>
 ```
 
 
