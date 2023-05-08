@@ -11,15 +11,14 @@ Estimated Time: 15 minutes
 * Clone workshop code
 * Provision an Oracle Database 
 * Install SQLcl client for convenient administration of database
-* Run scripts in SQLcl to setup database user, tables, and JSON duality views
+* Run scripts in SQLcl to setup database user, tables, and JSON duality views, as well as JavaScript
 * Configure access to Oracle Cloud services including keys and config file
+* Obtain an OpenAI account and token
 * Build the workshop code so that it is ready for later labs
 
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and have signed in to the account.
-- The workshop also requires Always Free 21c ATP instances and so is limited to the following regions: Ashburn (IAD), Phoenix (PHX), Frankfurt (FRA) and London (LHR) regions
-
 
 ## Task 1: Download or clone the workshop source code
 
