@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will provision an Oracle Database and OCI Cloud Account and download the source code for the workshop
+In this lab, we will provision and setup everything that is needed to run all of the labs in the workshop
 
 Estimated Time: 15 minutes
 
@@ -58,7 +58,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
     <copy>docker exec [IMAGE_ID] resetPassword yournewpassword</copy>
 ```
 
-## Task 3: Download SQLcl and initialize the database with user, tables and JSON Duality views
+## Task 3: Download SQLcl and initialize the database with user, tables, JSON Duality views, and JavaScript code
 
 1.    Download and install from this location https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/ 
       This will provide in a `[SQLcl_INSTALL_DIR]/bin/sql` executable that we will use to administer the database.
@@ -102,6 +102,8 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
       tenancy=ocid1.tenancy.oc1..<unique_ID>
       region=us-ashburn-1
 ```
+
+https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
 
 ## Task 5: Build the workshop code so that it is ready for later labs
 

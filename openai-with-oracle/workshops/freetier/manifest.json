@@ -15,7 +15,7 @@
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Getting started with Open AI and JSON Features of Oracle Database",
+        "title": "Lab 2: Getting started with JavaScript and JSON Duality features of Oracle Database and OpenAI",
         "filename": "../../json/json.md"
       },
       {
@@ -35,15 +35,11 @@
         "filename": "../../ocivision-mixedreality/ocivision-mixedreality.md"
       },
       {
-        "title": "Lab 7: Techniques for calling OpenAI and Oracle Services",
-        "filename": "../../waystocall-openai/waystocall-openai.md"
-      },
-      {
-        "title": "Lab 8: Alternatives to OpenAI",
+        "title": "Lab 7: Alternatives to OpenAI",
         "filename": "../../openai-alternatives/openai-alternatives.md"
       },
       {
-        "title": "Lab 9: Tear Down",
+        "title": "Lab 8: Tear Down",
         "filename": "../../teardown/teardown.md"
       },
       {
