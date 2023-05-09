@@ -1,4 +1,4 @@
-# Use Oracle Database JSON features such as JSON Duality and Mongo API with OpenAI
+# Use Oracle Database JavaScript support and JSON features such as JSON Duality
 
 ## Introduction
 
