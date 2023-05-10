@@ -108,7 +108,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
     <copy>ifconfig | grep 'inet 192'| awk '{ print $2}'</copy>
     ```
 
-    Replace the `192.168.205.1` value in the sql/mlejs_openai_sproc.sql
+    Replace the `192.168.205.1` value in the sql/mlejs_openai_sproc.sql and sql/create_aijs_user.sql
 
 3. Login to the database with SQLcl as was done in Task 2.
 
@@ -133,7 +133,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 5. Replace the following values in `./build_and_run.sh` as necessary
 
     ```
-   export OPENAI_KEY=xxxxxxxx
+   export OPENAI_KEY=asdf-yourkeyhere-asdfx
    export OCICONFIG_File=~/.oci/config
     ```
 
