@@ -88,9 +88,15 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 3. Directions for creating the key and fingerprint can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
    and the region, tenancy, and user OCIDs can be found in the OCI console. Simply paste them and save the `config` file.
 
-   ![SQLcl login to sagadb2](images/connectwithSQLclsaga2.png " ")
+   ![OCI Setup](images/OCIInfo.png " ")
 
-## Task 5: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs.
+## Task 5: Obtain OpenAI account and Key
+
+1. Simply go to the https://platform.openai.com site to obtain an account and then generate and copy a key at https://platform.openai.com/account/api-keys
+
+![OpenAI Setup](images/openaisignup.png " ")
+
+## Task 6: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs.
 
 1. cd to the [AI_WORKSHOP_SRC_ROOT] directory.
 
