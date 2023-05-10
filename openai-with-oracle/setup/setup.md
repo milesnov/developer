@@ -102,46 +102,46 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 
 2. Obtain the IP of the host machine and place it in sql/mlejs_openai_sproc.sql so the database can call out to it.
 
-The application that runs in the database will make calls out to our application. Since we are running the database in a container, it needs to be able to contact the host.  We can obtain the host IP using the following command
+    The application that runs in the database will make calls out to our application. Since we are running the database in a container, it needs to be able to contact the host.  We can obtain the host IP using the following command
 
-```
+    ```
     <copy>ifconfig | grep 'inet 192'| awk '{ print $2}'</copy>
-```
+    ```
 
-Replace the `192.168.205.1` value in the sql/mlejs_openai_sproc.sql
+    Replace the `192.168.205.1` value in the sql/mlejs_openai_sproc.sql
 
 3. Login to the database with SQLcl as was done in Task 2.
 
-```
+    ```
     <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/Welcome12345@//localhost:1521/freepdb1 as sysdba</copy>
-```
+    ```
 
 4. At the SQLcl prompt execute the following scripts to create a user with appropriate privileges, switch to that user,
 
-```
+    ```
     <copy>@sql/create_aijs_user.sql</copy>
-```
+    ```
 
-```
+    ```
     <copy>@sql/conversation.sql</copy>
-```
+    ```
 
-```
+    ```
     <copy>@sql/mlejs_openai_sproc.sql</copy>
-```
+    ```
 
 5. Replace the following values in `./build_and_run.sh` as necessary
 
-```
+    ```
    export OPENAI_KEY=xxxxxxxx
    export OCICONFIG_File=~/.oci/config
-```
+    ```
 
 6. Issue the following command to build and run the Spring Boot Java application that is used for most of the labs in this workshop.
 
-```
+    ```
     <copy>./build_and_run.sh</copy>
-```
+    ```
 
 You may now **proceed to the next lab.**..
 
