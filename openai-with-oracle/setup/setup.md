@@ -98,7 +98,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
 
 ## Task 6: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs.
 
-1. cd to the [AI_WORKSHOP_SRC_ROOT] directory.
+1. cd to the `[AI_WORKSHOP_SRC_ROOT]` directory.
 
 2. Obtain the IP of the host machine and place it in sql/mlejs_openai_sproc.sql so the database can call out to it.
 
