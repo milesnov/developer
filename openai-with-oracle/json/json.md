@@ -46,7 +46,6 @@ Estimated Time:  10 minutes
    
    The output should look similar to the following.
 
-   ![SQLcl login to sagadb2](images/connectwithSQLclsaga2.png " ")
 
 
 https://blogs.oracle.com/database/post/json-relational-duality-app-dev

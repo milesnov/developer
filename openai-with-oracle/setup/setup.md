@@ -30,55 +30,45 @@ Estimated Time: 15 minutes
 
 1.    There are a number of ways to go about this which can be found here: https://www.oracle.com/database/free/get-started/
       
-      Here we will use the docker container. Simply issue the following commands, replacing `yourpassword` with your compliant password such as `Welcome12345`
+      Here we will use the docker container. Simply issue the following commands, replacing `Welcome12345` with your compliant password if you like.
+      You can either use the container-registry.oracle.com container using the following command(s)...
 
    ```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-
-   ```
-    <copy>docker run -d -p 1521:1521 -e ORACLE_PASSWORD=yourpassword container-registry.oracle.com/database/free</copy>
+    <copy>docker pull gvenzl/oracle-free; docker run --add-host docker.for.mac.host.internal:host-gateway -d -p 1521:1521 -e ORACLE_PASSWORD=Welcome12345 gvenzl/oracle-free</copy>
    ```
 
 
-Optionally, add the `-v oracle-volume:/somedirectory` parameter if you would like data persisted and specific an actual directory (otherwise data is lost across database container restarts)
+Optionally, you can add the `-v oracle-volume:/somedirectory` parameter (replacing `somedirectory` with an actual directory) to the run command to persist data across container restarts as otherwise it will be lost.
 
    ```
-    <copy>docker run -d -p 1521:1521 -e ORACLE_PASSWORD=yourpassword -v oracle-volume:/somedirectory container-registry.oracle.com/database/free</copy>
+    <copy>docker pull gvenzl/oracle-free; docker run --add-host docker.for.mac.host.internal:host-gateway -d -p 1521:1521 -e ORACLE_PASSWORD=Welcome12345 -v oracle-volume:/somedirectory gvenzl/oracle-free</copy>
    ```
 
 Should you wish to reset the sys password, you can do so by issuing docker ps -al to get the image id and then issue the `resetPassword` as shown here.
 
 ```
-    <copy>docker ps -al</copy>
+    <copy>docker ps -al | grep oracle</copy>
 ```
 
 ```
     <copy>docker exec [IMAGE_ID] resetPassword yournewpassword</copy>
 ```
 
-## Task 3: Download SQLcl and initialize the database with user, tables, JSON Duality views, and JavaScript code
+## Task 3: Download SQLcl and install
 
 1.    Download and install from this location https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/download/ 
-      This will provide in a `[SQLcl_INSTALL_DIR]/bin/sql` executable that we will use to administer the database.
+      This will provide in a `[SQLcl_INSTALL_DIR]/bin/sql` executable that we will use to administer the database. For convenience you may add `[SQLcl_INSTALL_DIR]/bin` to your PATH.
 
 2.    Login  replacing `[SQLcl_INSTALL_DIR]` with the location of your SQLcl 
-      and replacing `yourpassword` with the one you provided as `ORACLE_PASSWORD` when creating the database.
+      and replacing `Welcome12345` with the one you provided as `ORACLE_PASSWORD` when creating the database.
 
 ```
-    <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/yourpassword@//localhost:1521/freepdb1 as sysdba</copy>
+    <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/Welcome12345@//localhost:1521/freepdb1 as sysdba</copy>
 ```
 
-
-3.    At the SQLcl prompt execute the following scripts to create a user with appropriate privileges, switch to that user, and  
-      (The script also enables REST endpoints on the database, though we don't actually use them in this workshop)
-
-```
-    <copy>@[AI_WORKSHOP_SRC_ROOT]/sql/create_user_enable_rest.sql</copy>
-```
+3. Type `exit` to exit SQLcl. We will return to it during setup.
 
 ## Task 4: Configure access to Oracle Cloud services including keys and config file
-
 
    
 1. First create a location to store the keys and config file which is generally `~/.oci`
@@ -87,12 +77,7 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
     <copy>mkdir ~/.oci</copy>
 ```
 
-2. Next, create a key_file and use it to obtain a finger print as describe here: Full instructions can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
-
-
-3. Finally, Full instructions for creating the `config` file (generally placed in `~/.oci`) can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File
-  However, in short, you can create the `config` file manually and simply fill in the appropriate information.
-
+2. You will create a key_file and a `config` file and place them in this directory. The config file will take the following format. 
 ```
     [DEFAULT]
       user=ocid1.user.oc1..<unique_ID>
@@ -101,15 +86,56 @@ Should you wish to reset the sys password, you can do so by issuing docker ps -a
       tenancy=ocid1.tenancy.oc1..<unique_ID>
       region=us-ashburn-1
 ```
+3. Directions for creating the key and fingerprint can be found here: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
+ and the region, tenancy, and user OCIDs can be found in the OCI console. Simply paste them and save the `config` file.
 
-https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#apisigningkey_topic_How_to_Generate_an_API_Signing_Key_Console
+   ![SQLcl login to sagadb2](images/connectwithSQLclsaga2.png " ")
 
-## Task 5: Build the workshop code so that it is ready for later labs
+## Task 5: Provide the application with the information about the database, OCI config, and OpenAI config and build so that it is ready for later labs.
 
-1.    Simply issue the following command, replacing the value of `[AI_WORKSHOP_SRC_ROOT]`, to build and run the Spring Boot Java application that is used for most of the labs in this workshop.
+1. cd to the [AI_WORKSHOP_SRC_ROOT] directory.
+
+2. Obtain the IP of the host machine and place it in sql/mlejs_openai_sproc.sql so the database can call out to it. 
+
+The application that runs in the database will make calls out to our application. Since we are running the database in a container, it needs to be able to contact the host.  We can obtain the host IP using the following command
 
 ```
-    <copy>cd [AI_WORKSHOP_SRC_ROOT] ;  mvn clean package ; java -jar target/oracleai-0.0.1-SNAPSHOT.jar</copy>
+    <copy>ifconfig | grep 'inet 192'| awk '{ print $2}'</copy>
+```
+
+Replace the `192.168.205.1` value in the sql/mlejs_openai_sproc.sql
+
+3. Login to the database with SQLcl as was done in Task 2.
+
+```
+    <copy>[SQLcl_INSTALL_DIR]/bin/sql  sys/Welcome12345@//localhost:1521/freepdb1 as sysdba</copy>
+```
+
+4. At the SQLcl prompt execute the following scripts to create a user with appropriate privileges, switch to that user,
+
+
+```
+    <copy>@sql/create_aijs_user.sql</copy>
+```
+
+```
+    <copy>@sql/conversation.sql</copy>
+```
+
+```
+    <copy>@sql/mlejs_openai_sproc.sql</copy>
+```
+
+5. Replace the following values in `./build_and_run.sh` as necessary
+```
+   export OPENAI_KEY=xxxxxxxx
+   export OCICONFIG_File=~/.oci/config
+```
+
+6. Issue the following command to build and run the Spring Boot Java application that is used for most of the labs in this workshop.
+
+```
+    <copy>./build_and_run.sh</copy>
 ```
 
 
