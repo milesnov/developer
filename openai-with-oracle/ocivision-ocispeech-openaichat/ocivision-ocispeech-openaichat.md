@@ -16,14 +16,7 @@ Estimated Time:  10 minutes
 
 - Completion of Setup lab
 
-## Task 1: Execute an Open AI query and save the results in the database
-
-1.    Build the src code project that was downloaded in the
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-- Picture is provided to Vision AI which detects images and passes those images to Open AI to describe optional providing a sentiment for the description. Sentences are returned and optionally sentiment analysis is done.
+## Task 1: Review the description on the home page at http://localhost:8080/ and click the Lab 5 app link
 
 You may now **proceed to the next lab.**..
 

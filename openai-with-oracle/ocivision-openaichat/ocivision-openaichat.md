@@ -15,15 +15,8 @@ Estimated Time:  10 minutes
 
 - Completion of Setup lab
 
-## Task 1: Execute an Open AI query and save the results in the database
+## Task 1: Review the description on the home page at http://localhost:8080/ and click the Lab 3 app link
 
-1.    Build the src code project that was downloaded in the
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-- Blood sugar test result image is fed to OCI Vision Text Detection / Document AI which gives back raw text
-      - Raw text is fed to OpenAI asking “explain these test results in simple terms” and “what should I do to get better results?”
 
 You may now **proceed to the next lab.**..
 

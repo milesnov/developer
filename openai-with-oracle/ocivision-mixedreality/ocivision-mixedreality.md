@@ -15,14 +15,7 @@ Estimated Time:  10 minutes
 
 - Completion of Setup lab
 
-## Task 1: Execute an Open AI query and save the results in the database
-
-1.    Build the src code project that was downloaded in the
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-Mixed Reality and Vision AI: - MR headset sends pictures of the surroundings to Vision AI service which detections the objects and sends them and their location back to the headset which plots them spatial and plays them back via text-to-speech
+## Task 1: Contact Paul Parkinson for details
 
 
 You may now **proceed to the next lab.**..

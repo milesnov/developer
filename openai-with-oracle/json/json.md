@@ -14,41 +14,8 @@ Estimated Time:  10 minutes
 
 - Completion of Setup lab
 
-## Task 1: Execute an Open AI query and save the results in the database
+## Task 1: Review the description on the home page at http://localhost:8080/ and click the Lab 2 app link
 
-1.    Build the src code project that was downloaded in the  
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-```
-    
-
-   ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
-
-
-## Task 2: Query the results in the database using both SQL and JSON queries.
-
-1.    Open a new browser tab with another OCI console and enter the Cloud Shell there. 
-
-       This is done for convenience so that one tab/Cloud Shell/SQLcl console can be use for saga initiator (TravelAgency) operations and the other for saga participant (Flight, Hotel, and Car) operations. 
-
-2.    Repeat steps 1 and 2 in Task 1 in order to enter SQLcl.
-
-3.    Enter the following command and then enter your password when prompted to connect to `sagadb2`
-
-    ```
-    <copy>connect admin@sagadb2_tp</copy>
-    ```  
-   
-   The output should look similar to the following.
-
-
-
-https://blogs.oracle.com/database/post/json-relational-duality-app-dev
 
 You may now **proceed to the next lab.**..
 

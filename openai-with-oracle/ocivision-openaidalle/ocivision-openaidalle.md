@@ -15,17 +15,8 @@ Estimated Time:  10 minutes
 
 - Completion of Setup lab
 
-## Task 1: Execute an Open AI query and save the results in the database
-
-1.    Build the src code project that was downloaded in the
-
-```
-    <copy>docker pull container-registry.oracle.com/database/free</copy>
-   ```
-
-O- Voice commands from user of the form “add” + [picture or code description] + to + [page location]” are sent to OCI Speech Service which transcribes them and sends the text back to client application
-- The text is sent to Open AI image/DALLE (for picture generation) or conversation/chat (for code generation)
-- The client app creates/updates the page according to the information, writes it to file, and loads it for viewing/testing.
+## Task 1: Review the description on the home page at http://localhost:8080/ and click the Lab 4 app link
+ 
 
 You may now **proceed to the next lab.**..
 
