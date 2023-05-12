@@ -7,7 +7,7 @@ The use case involves the interpretation health test results and recommended ste
 
 Estimated Time:  3 minutes
 
-[](youtube:ehnXpRSLWmM)
+[](youtube:lvxYkLSnCT8)
 
 ### Objectives
 
