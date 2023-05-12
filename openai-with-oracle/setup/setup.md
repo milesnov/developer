@@ -6,6 +6,8 @@ In this lab, we will provision and setup everything that is needed to run all of
 
 Estimated Time: 15 minutes
 
+[](youtube:pONVT_J5E-M)
+
 ### Objectives
 
 * Clone workshop code

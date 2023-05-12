@@ -8,7 +8,7 @@ detect objects in an image and write a sentence using those objects, including s
 
 Estimated Time:  3 minutes
 
-[](youtube:GDma-8uxMUc)
+[](youtube:ehnXpRSLWmM)
 
 ### Objectives
 
