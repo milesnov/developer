@@ -7,6 +7,10 @@ The use case involves the names of objects in a person's surroundings are spoken
 
 Estimated Time:  10 minutes
 
+[](youtube:40ADd-ALkcc)
+
+[](youtube:QTe2trT2ZHM)
+
 ### Objectives
 
 -   Use Oracle Database, OCI Vision AI, Open AI, and Mixed Reality

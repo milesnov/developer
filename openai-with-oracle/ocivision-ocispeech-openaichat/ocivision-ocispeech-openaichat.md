@@ -6,7 +6,9 @@ This lab will show you how to use Oracle Database, OCI Vision Service and OCI Sp
 The use case involves
 detect objects in an image and write a sentence using those objects, including sentiment generation and analysis as an educational use case for kids.
 
-Estimated Time:  10 minutes
+Estimated Time:  3 minutes
+
+[](youtube:GDma-8uxMUc)
 
 ### Objectives
 

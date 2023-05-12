@@ -4,7 +4,9 @@
 
 This lab will show you how to use Oracle Database JSON features to story, analyze, etc. your Open AI other data.
 
-Estimated Time:  10 minutes
+Estimated Time:  3 minutes
+
+[](youtube:Z-b0ayPRhwY)
 
 ### Objectives
 

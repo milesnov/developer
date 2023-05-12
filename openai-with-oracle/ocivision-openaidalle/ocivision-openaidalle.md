@@ -5,7 +5,9 @@
 This lab will show you how to use Oracle Database, OCI Speech Service, Open AI code and image generation
 The use case involves the creation webpages and storyboards using only voice commands for individuals with impaired motor control.
 
-Estimated Time:  10 minutes
+Estimated Time:  3 minutes
+
+[](youtube:ehnXpRSLWmM)
 
 ### Objectives
 

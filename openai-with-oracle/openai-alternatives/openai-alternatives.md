@@ -1,26 +1,57 @@
-# Use the Oracle Database along with Alternatives to Open AI
+#  Creating an OCI Compute Instance
 
-## Introduction
+[](youtube:T-acysQOT_4)
 
-This lab will show you how to use Oracle Database along with Alternatives to Open AI
+**1. Navigate to https://www.oracle.com/cloud/sign-in.html**
 
-Estimated Time:  10 minutes
+**2. Click "Next"
+Click this button.
+Click here.**
 
-### Objectives
+![](images/1.webp)
 
--   Use Oracle Database along with Alternatives to Open AI
+**3. Click here.
+Click "Compute"
+Click "Instances"**
 
-### Prerequisites
+![](images/2.webp)
 
-- Completion of Setup lab
+**4. Click "Create instance"
+Click the "Name" field.
+Click here.
+Click "Change image"
+Click "Marketplace"
+Click this checkbox.
+Click "Select image"
+Click "AI 'all-in-one' Data Science Image Intel/AMD"
+![](images/3.webp)
 
-## Task 1: 
+5. Click "Change shape"
+Click "Flexible OCPU count. Current generation Intel processors."
+Click this checkbox.
+Click the "Number of OCPUs" field.
+Click the "Amount of memory (GB)" field.
+Click the "Number of OCPUs" field.
+Click "Select shape"
 
+![](images/4.webp)
 
+6. Click "Create new virtual cloud network"
+Click "Save private key"
+Click "Save public key"
+Click the "Specify a custom boot volume size" field.
+Click the "Boot volume size (GB)" field.
+Click "Create"
 
-You may now **proceed to the next lab.**..
+![](images/5.webp)
 
-## Acknowledgements
+7. Click here.
+Click this icon.
+Double-click "PROVISIONING"
 
-* **Author** - Paul Parkinson, Architect and Developer Evangelist
-* **Last Updated By/Date** - Paul Parkinson, 2023
+![](images/6.webp)
+
+8. Click "Copy
+Copy to clipboard"
+
+![](images/7.webp)

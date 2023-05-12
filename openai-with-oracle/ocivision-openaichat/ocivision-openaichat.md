@@ -5,7 +5,9 @@
 This lab will show you how to use Oracle Database, OCI Vision AI Text Detection and Open AI Chat
 The use case involves the interpretation health test results and recommended steps for everyday individuals.
 
-Estimated Time:  10 minutes
+Estimated Time:  3 minutes
+
+[](youtube:JVrJx9_tnoI)
 
 ### Objectives
 
