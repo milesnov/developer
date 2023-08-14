@@ -31,7 +31,7 @@ This lab assumes you have:
 
 2. Click **Create Instance**.
 
-3. Enter a **name** for the instance. For this lab, use **compute\_generative_\ai**.
+3. Enter a **name** for the instance. For this lab, use **compute\_generative_ai**.
 
     ![](images/name_compute.png " ")
 
@@ -226,7 +226,7 @@ After connecting to your instance, you will create a Conda environment and insta
 
     ![](images/example_mod.png " ")
 
-3. Run the ask\_generations_\nomic.py file. This file will load the model and start making predictions on some questions.
+3. Run the ask\_generations_nomic.py file. This file will load the model and start making predictions on some questions.
 
   	```
     <copy>python ask_generations_nomic.py</copy>
