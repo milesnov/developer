@@ -232,7 +232,7 @@ After connecting to your instance, you will create a Conda environment and insta
     <copy>python ask_generations_nomic.py</copy>
     ```
 
-    ![](images/run_ex.png " ")
+    ![](images/example.png " ")
 
 <!-- ## Learn More
 
