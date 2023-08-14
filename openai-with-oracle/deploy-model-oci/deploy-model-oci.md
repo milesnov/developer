@@ -7,131 +7,189 @@
 Estimated Time: 30 minutes
 
 ### Objectives
-
+<!-- EDIT THIS -->
 In this lab, you will:
-* Create a compute instance on OCI
-* Connect your SSH client to your compute instance
-* Create a Conda environment to install python dependencies
-* Download the Groovy model
-* Download the GitHub repository with the examples
+- Create a compute instance on OCI
+- Connect your SSH client to your compute instance
+- Create a Conda environment to install python dependencies
+- Download the Groovy model
+- Download the GitHub repository with the examples
 
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle Cloud account
+- An Oracle Cloud account
+- SSH Keys
 
+<!-- IMAGES NEED TO BE PULLED FROM SETUP COMPUTE -->
+## Task 1: Setup Compute Instance on OCI
 
-## Task 1: Create a compute instance on OCI
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+    ![Compute Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
-1. Open the navigation menu and click Compute. Under Compute, click Instances.
+2. Click **Create Instance**.
 
-	<!-- ![Image alt text](images/sample1.png) -->
+3. Enter a **name** for the instance. For this lab, use **compute_generative_ai**.
 
-	> **Note:** Use this format for notes, hints, and tips. Only use one "Note" at a time in a step.
+4. Select the **compartment** and **availability domain** to create the instance in.
 
-2. Click Create instance.
+5. In the **Image and shape section**, click **Change image**.
 
-  <!-- ![Image alt text](images/sample1.png) -->
+6. Select **Marketplace** as the image source and then select either of the data science images below:
 
-3. Enter a name for the instance.
-
-4. Select the compartment to create the instance in.
-
-5. In the Image and shape section, choose the image for the instance:
-
-   By default, an Oracle Linux image is used to boot the instance. To select a different image or a boot volume, in the Image section, click Change image. Then, select the Marketplace as the image source.
-
-	 Select the Partner images option, and then select an either of the data science images below.
-
-    - AI 'all-in-one' Data Science Image Intel/AMD
-		- AI 'all-in-one' Data Science Image for GPU
+    - **AI 'all-in-one' Data Science Image Intel/AMD**
+    - **AI 'all-in-one' Data Science Image for GPU**
 
    Alternatively, you may select Ubuntu as the image source and use either of the images below:
 
     - Canonical Ubuntu 20.04
-		- Canonical Ubuntu 22.04
+    - Canonical Ubuntu 22.04
 
-6. In the Image and shape section, choose the image for the instance:
+   Click **Select image**.
 
-   For the data science images, select Virtual machine as the Instance type, AMD or Intel processors as the shape series, and VM.Standard3.Flex as the shape name. The number of OCPUs and amount of memory may be left as the defaults.
+7. In the **Image and shape section**, click **Change shape**.
 
-7. In the Networking section, configure the network details for the instance:
+8. For the data science images, select **Virtual machine** as the **Instance type**, **AMD** or **Intel** processors as the **shape series**, and **VM.Standard3.Flex** as the **shape name**. The number of OCPUs and amount of memory may be left as the defaults.
 
-   Create new virtual cloud network: If you want to create a new VCN, make the following selections:
+   Click **Select shape**.
 
-    - New virtual cloud network name: A friendly name for the network. Avoid entering confidential information.
-    - Create in compartment: The compartment where you want to put the new network.
-    - Create new public subnet: A subnet within the cloud network to attach the instance to. The subnets are either public or private. Private means the instances in that subnet can't have public IP addresses. See Access to the Internet. Subnets are either specific to an availability domain or regional (regional ones have "regional" after the name). We recommend using regional subnets.
+9. In the Networking section, select **Create new virtual cloud network**. The other options may be left as the default.
 
-   Enter the following information:
+10. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key.
 
-    - New subnet name: A friendly name for the subnet. It doesn't have to be unique, and it can be changed later. Avoid entering confidential information.
-    - Create in compartment: The compartment where you want to put the subnet.
-    - CIDR block: A single, contiguous CIDR block for the subnet (for example, 172.16.0.0/24). Make sure it's within the cloud network's CIDR block and doesn't overlap with any other subnets. You cannot change this value later. See Allowed VCN Size and Address Ranges. For reference, here's a CIDR calculator.
-    - Enter subnet OCID: If you want to provide an existing subnet's OCID, for Subnet OCID, enter the subnet OCID.
+11. In the Boot volume section, configure the size and encryption options for the instance's boot volume. Select the **Specify a custom boot volume size** check box. Then, enter **100** as the **boot volume size (GB)**.
 
-8. Linux instances:In the Add SSH keys section, generate an SSH key pair or upload your own public key. Select one of the following options:
+12. Click **Create**.
 
-    - Generate a key pair for me: Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.
-    - Upload public key files (.pub): Upload the public key portion of your key pair. Either browse to the key file that you want to upload, or drag and drop the file into the box. To provide multiple keys, press and hold down the Command key (on Mac) or the Ctrl key (on Windows) while selecting files.
-    - Paste public keys: Paste the public key portion of your key pair in the box.
+## Task 2: Connect to Your Instance
 
-9. In the Boot volume section, configure the size and encryption options for the instance's boot volume:
+There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
-   To specify a custom size for the boot volume, select the Specify a custom boot volume size check box. Then, enter 100 as the boot volume size (GB).
+- Oracle Cloud Shell
+- MAC or Windows CYCGWIN Emulator
+- Windows Using Putty
 
-10. Click Create.
+### Oracle Cloud Shell
 
-## Task 2: Connect your SSH client to your compute instance
+1. To re-start the Oracle Cloud shell, go to your Cloud console and click **Cloud Shell** at the top right of the page.
+    >**Note:** Make sure you are in the region you were assigned
 
-1. Step 1 - tables sample
+    ![Click cloud shell icon.](https://oracle-livelabs.github.io/common/images/console/cloud-shell.png " ")
+    ![Open cloud shell.](https://oracle-livelabs.github.io/common/images/console/cloud-shell-open.png " ")
 
-  Use tables sparingly:
+2.  Enter the command below to login into your instance.
+    ````text
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    >**Note:** The angle brackets <> should not appear in your code.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+3.  When prompted, answer **yes** to continue connecting.
 
-    - List item 1
-    - List item 2
+    ![SSH command](./images/ssh.png " ")
 
-3. Code examples
+### MAC or Windows CYGWIN Emulator
+1.  Open up a terminal (MAC) or cygwin emulator. Enter the command below to log in to your instance. Enter yes when prompted.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
+    ```text
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ```
 
-4. Code examples that include variables
+    ![SSH command](./images/ssh-first-time.png " ")
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    >**Note:** The angle brackets <> should not appear in your code.
 
+### Windows using Putty
 
-## Task 3: Create a Conda environment to install python dependencies
+1.  Open up putty and create a new connection.
 
-1. Step 1
+2.  Enter a name for the session and click **Save**.
 
-2. Step 2
+    ![Save Putty session](./images/putty-setup.png " ")
 
-## Task 4: Download the Groovy model
+3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to **root**.
 
-1. Step 1
+4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking **Browse** under the Private key file for authentication.
 
-2. Step 2
+5. Navigate to the location where you saved your SSH private key file, select the file, and click **Open**.
+    >**Note:**  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
-## Task 5: Download the github repository with the examples
+    ![Select private SSH key](./images/putty-auth.png " ")
 
-1. Step 1
+6. The file path for the SSH private key file now displays in the Private key file for the authentication field.
 
-2. Step 2
+7. Click **Session** in the left navigation pane, then click **Save** in the Load.
+
+8. Click **Open** to begin your session with the instance.
+
+Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
+
+## Task 3: Create a Conda environment, download the Groovy model, and download the repository with the examples
+After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repo with the examples to use.
+
+1. Create a new conda environment.
+
+  	```
+    <copy>conda create -n "example" python=3.10</copy>
+    ```
+
+2. Activate the environment.
+
+  	```
+    <copy>conda activate example</copy>
+    ```
+
+3. Check which pip and python paths are being used.
+
+  	```
+    <copy>which pip</copy>
+    ```
+
+  	```
+    <copy>which python</copy>
+    ```
+
+4. Install the dependencies.
+
+  	```
+    <copy>pip install nomic</copy>
+    ```
+
+  	```
+    <copy>pip install pygpt4all</copy>
+    ```
+5. Download the Groovy model
+
+  	```
+    <copy>curl -O  https://gpt4all.io/models/ggml-gpt4all-l13b-snoozy.bin</copy>
+    ```
+
+6. Clone the GitHub repository.
+
+  	```
+    <copy>git clone https://github.com/jasperan/oci-gpt4</copy>
+    ```
+
+   Congratulations!  You now have an environment with everything installed to run your models.
+
+## Task 5: Choose which type of model you are going to use
+
+1. Navigate to the oci-gpt4 directory.
+
+  	```
+    <copy>cd oci-gpt4/</copy>
+    ```
+
+2. Navigate to the examples directory.
+
+  	```
+    <copy>cd examples/</copy>
+    ```
+3. Run the ask_generations_nomic.py file. This file will load the model and start making predictions on some questions.
+
+  	```
+    <copy>python ask_generations_nomic.py</copy>
+    ```
 
 ## Learn More
 
