@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to deploy your own Chat GPT model on OCI. First, you will create a compute instance. Next, you will create a Conda environment and install dependencies. Then, you will download the Groovy model and GitHub examples. Finally, you will run an example, which will deploy the model on your OCI compute instance.
 
 Estimated Time: 30 minutes
 
@@ -112,7 +112,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
 ## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository
-After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repo with the examples to use.
+After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repository from GitHub with the examples to use.
 
 1. Create a new conda environment.
 
