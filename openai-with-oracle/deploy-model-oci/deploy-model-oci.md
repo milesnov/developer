@@ -31,7 +31,7 @@ This lab assumes you have:
 
 2. Click **Create Instance**.
 
-3. Enter a **name** for the instance. For this lab, use **compute_generative_ai**.
+3. Enter a **name** for the instance. For this lab, use **compute\_generative_\ai**.
 
     ![](images/name_compute.png)
 
@@ -145,6 +145,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
 ## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository
+
 After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repository from GitHub with the examples to use.
 
 1. Create a new conda environment.
@@ -221,7 +222,7 @@ After connecting to your instance, you will create a Conda environment and insta
 
     ![](images/example_mod.png)
 
-3. Run the ask_generations_nomic.py file. This file will load the model and start making predictions on some questions.
+3. Run the ask\_generations_\nomic.py file. This file will load the model and start making predictions on some questions.
 
   	```
     <copy>python ask_generations_nomic.py</copy>
