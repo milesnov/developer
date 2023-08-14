@@ -11,7 +11,7 @@ Estimated Time: 30 minutes
 In this lab, you will:
 - Create a compute instance on OCI
 - Connect your SSH client to your compute instance
-- Create a Conda environment, download the Groovy model, and download the GitHub repository with the examples
+- Create a Conda environment, download the Groovy model, and download the GitHub repository
 - Run the example
 
 ### Prerequisites
@@ -123,7 +123,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
-## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository with the examples
+## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository
 After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repo with the examples to use.
 
 1. Create a new conda environment.
