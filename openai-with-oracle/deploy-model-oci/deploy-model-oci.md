@@ -11,9 +11,8 @@ Estimated Time: 30 minutes
 In this lab, you will:
 - Create a compute instance on OCI
 - Connect your SSH client to your compute instance
-- Create a Conda environment to install python dependencies
-- Download the Groovy model
-- Download the GitHub repository with the examples
+- Create a Conda environment, download the Groovy model, and download the GitHub repository with the examples
+- Run the example
 
 ### Prerequisites
 
@@ -124,7 +123,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
-## Task 3: Create a Conda environment, download the Groovy model, and download the repository with the examples
+## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository with the examples
 After connecting to your instance, you will create a Conda environment and install python dependencies, which are going to be used in projects to install and use the GPT models. Then, you will download the Groovy model and the repo with the examples to use.
 
 1. Create a new conda environment.
@@ -161,7 +160,7 @@ After connecting to your instance, you will create a Conda environment and insta
 5. Download the Groovy model
 
   	```
-    <copy>curl -O  https://gpt4all.io/models/ggml-gpt4all-l13b-snoozy.bin</copy>
+    <copy>curl -O  https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin</copy>
     ```
 
 6. Clone the GitHub repository.
@@ -172,7 +171,7 @@ After connecting to your instance, you will create a Conda environment and insta
 
    Congratulations!  You now have an environment with everything installed to run your models.
 
-## Task 5: Choose which type of model you are going to use
+## Task 5: Run the example
 
 1. Navigate to the oci-gpt4 directory.
 
@@ -190,15 +189,15 @@ After connecting to your instance, you will create a Conda environment and insta
   	```
     <copy>python ask_generations_nomic.py</copy>
     ```
-
+<!--
 ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [URL text 2](http://docs.oracle.com) -->
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - <Hannah Nguyen, Solution Engineer, NACI Engineering Specialists>
+<!-- * **Contributors** -  <Name, Group> -- optional -->
+* **Last Updated By/Date** - <Hannah Nguyen, August 2023>
