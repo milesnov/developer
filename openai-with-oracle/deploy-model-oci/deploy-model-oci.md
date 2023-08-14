@@ -198,6 +198,6 @@ After connecting to your instance, you will create a Conda environment and insta
 * [URL text 2](http://docs.oracle.com) -->
 
 ## Acknowledgements
-* **Author** - <Hannah Nguyen, Solution Engineer, NACI Engineering Specialists>
+* **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
 <!-- * **Contributors** -  <Name, Group> -- optional -->
-* **Last Updated By/Date** - <Hannah Nguyen, August 2023>
+* **Last Updated By/Date** - Hannah Nguyen, August 2023
