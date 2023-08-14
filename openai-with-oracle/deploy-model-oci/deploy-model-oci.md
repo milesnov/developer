@@ -4,10 +4,12 @@
 
 This lab walks you through the steps to deploy your own Chat GPT model on OCI. First, you will create a compute instance. Next, you will create a Conda environment and install dependencies. Then, you will download the Groovy model and GitHub examples. Finally, you will run an example, which will deploy the model on your OCI compute instance.
 
+[](youtube:T-acysQOT_4)
+
 Estimated Time: 30 minutes
 
 ### Objectives
-<!-- EDIT THIS -->
+
 In this lab, you will:
 - Create a compute instance on OCI
 - Connect your SSH client to your compute instance
@@ -24,15 +26,20 @@ This lab assumes you have:
 ## Task 1: Setup Compute Instance on OCI
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
     ![Compute Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
 2. Click **Create Instance**.
 
 3. Enter a **name** for the instance. For this lab, use **compute_generative_ai**.
 
+    ![](images/name_compute.png)
+
 4. Select the **compartment** and **availability domain** to create the instance in.
 
 5. In the **Image and shape section**, click **Change image**.
+
+    ![](images/change_image.png)
 
 6. Select **Marketplace** as the image source and then select either of the data science images below:
 
@@ -46,17 +53,29 @@ This lab assumes you have:
 
    Click **Select image**.
 
+    ![](images/select_image.png)
+
 7. In the **Image and shape section**, click **Change shape**.
+
+    ![](images/change_shape.png)
 
 8. For the data science images, select **Virtual machine** as the **Instance type**, **AMD** or **Intel** processors as the **shape series**, and **VM.Standard3.Flex** as the **shape name**. The number of OCPUs and amount of memory may be left as the defaults.
 
    Click **Select shape**.
 
+    ![](images/select_shape.png)
+
 9. In the Networking section, select **Create new virtual cloud network**. The other options may be left as the default.
+
+    ![](images/vcn.png)
 
 10. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key.
 
+    ![](images/ssh.png)
+
 11. In the Boot volume section, configure the size and encryption options for the instance's boot volume. Select the **Specify a custom boot volume size** check box. Then, enter **100** as the **boot volume size (GB)**.
+
+    ![](images/boot.png)
 
 12. Click **Create**.
 
@@ -109,6 +128,20 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click **Open** to begin your session with the instance.
 
+### Windows using MobaXterm
+
+1. In MobaXterm, we need to create a new SSH session to our newly-created OCI Compute Instance:
+![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2023-05-09/8c5220b6-8835-4220-b7ea-d4e30b79cd9a/screenshot.jpeg?tl_px=0,162&br_px=746,582&sharp=0.8&width=560&wat_scale=50&wat=1&wat_opacity=1&wat_gravity=northwest&wat_url=https://colony-recorder.s3.amazonaws.com/images/watermarks/0EA5E9_standard.png&wat_pad=116,139)
+
+1. We fill this menu with our data: our `IP` address, username `opc` and an additional `advanced` SSH option to use public-private key cryptography as the authentication mechanism when connecting into the machine.**
+![](https://colony-recorder.s3.amazonaws.com/files/2023-05-09/8213a2df-0bc0-41d0-ba82-d4918f53d255/stack_animation.webp)
+
+**3. Now, we select the ssh key that we downloaded while creating the OCI Compute Instance as the private key to use in our SSH connection:
+![](https://colony-recorder.s3.amazonaws.com/files/2023-05-09/9a4cc6dd-32f7-4264-8faa-528708b9cf95/stack_animation.webp)
+
+4. Now that our SSH connection is configured, let's **access** our Compute Instance:
+![](https://ajeuwbhvhr.cloudimg.io/colony-recorder.s3.amazonaws.com/files/2023-05-09/abb99180-696a-4128-a7c5-4162a9d2acbd/screenshot.jpeg?tl_px=1208,596&br_px=1954,1016&sharp=0.8&width=560&wat_scale=50&wat=1&wat_opacity=1&wat_gravity=northwest&wat_url=https://colony-recorder.s3.amazonaws.com/images/watermarks/0EA5E9_standard.png&wat_pad=262,139)
+
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
 ## Task 3: Create a Conda environment, download the Groovy model, and download the GitHub repository
@@ -119,6 +152,8 @@ After connecting to your instance, you will create a Conda environment and insta
   	```
     <copy>conda create -n "example" python=3.10</copy>
     ```
+
+    ![](images/conda_create.png)
 
 2. Activate the environment.
 
@@ -136,26 +171,37 @@ After connecting to your instance, you will create a Conda environment and insta
     <copy>which python</copy>
     ```
 
+    ![](images/conda_example.png)
+
 4. Install the dependencies.
 
   	```
     <copy>pip install nomic</copy>
     ```
 
+    ![](images/nomic.png)
+
   	```
     <copy>pip install pygpt4all</copy>
     ```
+
+    ![](images/pygpt4all.png)
+
 5. Download the Groovy model
 
   	```
     <copy>curl -O  https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin</copy>
     ```
 
+    ![](images/groovy.png)
+
 6. Clone the GitHub repository.
 
   	```
     <copy>git clone https://github.com/jasperan/oci-gpt4</copy>
     ```
+
+    ![](images/clone_repo.png)
 
    You now have an environment with everything installed to run your models.
 
@@ -172,11 +218,16 @@ After connecting to your instance, you will create a Conda environment and insta
   	```
     <copy>cd examples/</copy>
     ```
+
+    ![](images/example_mod.png)
+
 3. Run the ask_generations_nomic.py file. This file will load the model and start making predictions on some questions.
 
   	```
     <copy>python ask_generations_nomic.py</copy>
     ```
+
+    ![](images/run_ex.png)
 
 <!-- ## Learn More
 
