@@ -81,22 +81,15 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-    >**Note:** The angle brackets <> should not appear in your code.
-
 3.  When prompted, answer **yes** to continue connecting.
 
-    ![SSH command](./images/ssh.png " ")
-
 ### MAC or Windows CYGWIN Emulator
+
 1.  Open up a terminal (MAC) or cygwin emulator. Enter the command below to log in to your instance. Enter yes when prompted.
 
     ```text
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ```
-
-    ![SSH command](./images/ssh-first-time.png " ")
-
-    >**Note:** The angle brackets <> should not appear in your code.
 
 ### Windows using Putty
 
@@ -104,16 +97,11 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 2.  Enter a name for the session and click **Save**.
 
-    ![Save Putty session](./images/putty-setup.png " ")
-
 3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to **root**.
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking **Browse** under the Private key file for authentication.
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click **Open**.
-    >**Note:**  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
-
-    ![Select private SSH key](./images/putty-auth.png " ")
 
 6. The file path for the SSH private key file now displays in the Private key file for the authentication field.
 
@@ -169,7 +157,7 @@ After connecting to your instance, you will create a Conda environment and insta
     <copy>git clone https://github.com/jasperan/oci-gpt4</copy>
     ```
 
-   Congratulations!  You now have an environment with everything installed to run your models.
+   You now have an environment with everything installed to run your models.
 
 ## Task 5: Run the example
 
@@ -189,13 +177,14 @@ After connecting to your instance, you will create a Conda environment and insta
   	```
     <copy>python ask_generations_nomic.py</copy>
     ```
-<!--
-## Learn More
+
+<!-- ## Learn More
 
 *(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com) -->
+* [URL text 2](http://docs.oracle.com)  -->
+
 
 ## Acknowledgements
 * **Author** - Hannah Nguyen, Solution Engineer, NACI Engineering Specialists
