@@ -159,7 +159,7 @@ After connecting to your instance, you will create a Conda environment and insta
 
    You now have an environment with everything installed to run your models.
 
-## Task 5: Run the example
+## Task 4: Run the example
 
 1. Navigate to the oci-gpt4 directory.
 
